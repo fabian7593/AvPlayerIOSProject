@@ -2,7 +2,7 @@
 //  principalTableViewController.m
 //  AvPlayerIOSProject
 //
-//  Created by Cesar Gomez on 12/2/15.
+//  Created by Fabian Rosales on 12/2/15.
 //  Copyright © 2015 KeyBellSoftCR. All rights reserved.
 //
 
@@ -11,12 +11,13 @@
 #import "SaveVideoTableViewController.h"
 #import "VIDEOS.h"
 #import "VideoViewController.h"
-
+#import "XtremVideosViewController.h"
 @interface principalTableViewController ()
 {
     NSMutableArray *arrayToShowTheVideos;
     AppDelegate *appDelegateIntance;
     NSManagedObject *selectedVideo;
+    BOOL firstTime;
 }
 @end
 
@@ -25,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setInitialVariables];
+    firstTime=YES;
     
     #warning THIS CODE IS FOR DELETE ALL VIDEOS
     /*NSFetchRequest *allData = [[NSFetchRequest alloc] init];
@@ -76,10 +78,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     selectedVideo = [arrayToShowTheVideos objectAtIndex:indexPath.row];
-    VideoViewController *viewController = [[VideoViewController alloc] init];
+    XtremVideosViewController *viewController = [[XtremVideosViewController alloc] init];
     viewController.globalVideos = (VIDEOS *)selectedVideo;
-    [self.navigationController pushViewController:viewController animated:YES];
-    
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 0)//OK button pressed
+    {
+        VideoViewController *viewController = [[VideoViewController alloc] init];
+        viewController.globalVideos = (VIDEOS *)selectedVideo;
+        [self.navigationController pushViewController:viewController animated:YES];
+        // [self performSegueWithIdentifier:@"xtremv" sender:self];
+    }
+    else if(buttonIndex == 1)//Annul button pressed.
+    {
+        [self performSegueWithIdentifier:@"xtremv" sender:self];
+    }
 }
 
 
@@ -106,10 +122,31 @@
     [fetch setSortDescriptors:@[sort]];
     NSError *error;
     NSArray *array = [appDelegateIntance.managedObjectContext executeFetchRequest:fetch error:&error];
-    
     return [NSMutableArray arrayWithArray:array];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if(firstTime){
+        //deprecatedvideos
+        //xtremv
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"NO!"
+                                                            message:@"danger"
+                                                           delegate:self
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"Play with AVplayer View Controller (deprecated)",
+                                  @"Play AVPlayer library", nil];
+        
+        [alertView show];
+        firstTime=NO;
+    }else{
+        firstTime=YES;
+        if([[segue identifier] isEqualToString:@"xtremv"]){
+            XtremVideosViewController *viewController = (XtremVideosViewController *)segue.destinationViewController;
+            viewController.globalVideos = (VIDEOS *)selectedVideo;
+        }
+    }
+}
 
 
 

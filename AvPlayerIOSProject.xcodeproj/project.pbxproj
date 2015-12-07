@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E3707E91C162C4D00A8E625 /* XtremVideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3707E81C162C4D00A8E625 /* XtremVideosViewController.m */; };
+		9E3707EC1C16353C00A8E625 /* PlayerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3707EB1C16353C00A8E625 /* PlayerClass.m */; };
 		9E60A9DB1C07B24E00733292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60A9DA1C07B24E00733292 /* main.m */; };
 		9E60A9DE1C07B24E00733292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60A9DD1C07B24E00733292 /* AppDelegate.m */; };
 		9E60A9E11C07B24E00733292 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E60A9E01C07B24E00733292 /* VideoViewController.m */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E3707E71C162C4D00A8E625 /* XtremVideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XtremVideosViewController.h; sourceTree = "<group>"; };
+		9E3707E81C162C4D00A8E625 /* XtremVideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XtremVideosViewController.m; sourceTree = "<group>"; };
+		9E3707EA1C16353C00A8E625 /* PlayerClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerClass.h; sourceTree = "<group>"; };
+		9E3707EB1C16353C00A8E625 /* PlayerClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerClass.m; sourceTree = "<group>"; };
 		9E60A9D61C07B24E00733292 /* AvPlayerIOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvPlayerIOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E60A9DA1C07B24E00733292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E60A9DC1C07B24E00733292 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 		9E60A9D81C07B24E00733292 /* AvPlayerIOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				9E3707E71C162C4D00A8E625 /* XtremVideosViewController.h */,
+				9E3707E81C162C4D00A8E625 /* XtremVideosViewController.m */,
 				9EA4B94E1C0FD7FD0056824D /* DTO */,
 				9E60A9DC1C07B24E00733292 /* AppDelegate.h */,
 				9E60A9DD1C07B24E00733292 /* AppDelegate.m */,
@@ -87,6 +95,8 @@
 				9E60A9ED1C07B24E00733292 /* Info.plist */,
 				9E60A9E51C07B24E00733292 /* AvPlayerIOSProject.xcdatamodeld */,
 				9E60A9D91C07B24E00733292 /* Supporting Files */,
+				9E3707EA1C16353C00A8E625 /* PlayerClass.h */,
+				9E3707EB1C16353C00A8E625 /* PlayerClass.m */,
 			);
 			path = AvPlayerIOSProject;
 			sourceTree = "<group>";
@@ -184,10 +194,12 @@
 				9EA4B9531C0FD8170056824D /* VIDEOS+CoreDataProperties.m in Sources */,
 				9E60A9E71C07B24E00733292 /* AvPlayerIOSProject.xcdatamodeld in Sources */,
 				9E60A9DE1C07B24E00733292 /* AppDelegate.m in Sources */,
+				9E3707E91C162C4D00A8E625 /* XtremVideosViewController.m in Sources */,
 				9EA4B94D1C0FD59B0056824D /* principalTableViewController.m in Sources */,
 				9E60A9DB1C07B24E00733292 /* main.m in Sources */,
 				9EA4B9571C0FDA030056824D /* SaveVideoTableViewController.m in Sources */,
 				9EA4B9541C0FD8170056824D /* VIDEOS.m in Sources */,
+				9E3707EC1C16353C00A8E625 /* PlayerClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

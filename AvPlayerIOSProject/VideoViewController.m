@@ -2,7 +2,7 @@
 //  ViewController.m
 //  AvPlayerIOSProject
 //
-//  Created by Cesar Gomez on 11/26/15.
+//  Created by Fabian Rosales on 11/26/15.
 //  Copyright © 2015 KeyBellSoftCR. All rights reserved.
 //
 
@@ -38,13 +38,13 @@
     playerViewController.player=player;
     [self presentViewController:playerViewController animated:NO completion:^{}];
     
-    /*UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.titleLabel.text = @"Back";
     btn.frame = CGRectMake(50, 50, 5, 5);
     [btn addTarget:self action:@selector(didSelectButton:) forControlEvents:UIControlEventTouchUpInside];
     [btn setUserInteractionEnabled:YES];
     [btn setEnabled:YES];
-    [playerViewController.contentOverlayView addSubview:btn];*/
+    [playerViewController.contentOverlayView addSubview:btn];
 
     
     [player play];

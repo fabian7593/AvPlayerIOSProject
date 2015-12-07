@@ -24,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" identifier="videos" id="QCz-ZA-Ecp"/>
+                                    <segue destination="Ouq-Jv-cr4" kind="push" identifier="xtremv" id="EmR-Lk-pDh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" id="oIM-Ii-ikZ">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="AKg-yu-0yx">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hDS-eB-vPL">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="534" y="7" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
@@ -48,7 +48,128 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZ4-uV-VcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222" y="-10"/>
+            <point key="canvasLocation" x="-222" y="-17"/>
+        </scene>
+        <!--Xtrem Videos View Controller-->
+        <scene sceneID="5z4-Lv-2bM">
+            <objects>
+                <viewController id="Ouq-Jv-cr4" customClass="XtremVideosViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EqZ-vI-QPV"/>
+                        <viewControllerLayoutGuide type="bottom" id="4CC-Ns-cBn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hR6-ab-vtF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URu-wi-k2t" customClass="PlayerClass">
+                                <rect key="frame" x="123" y="20" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cl9-uj-pZY">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25b-dG-TwQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Play / Pause"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="441" width="88" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="playStop:" destination="Ouq-Jv-cr4" eventType="touchUpInside" id="dHV-Xo-Lk7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkD-5e-gRH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Full Screen"/>
+                                <connections>
+                                    <action selector="fullScreen:" destination="Ouq-Jv-cr4" eventType="touchUpInside" id="Xwg-su-I3Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="URu-wi-k2t" firstAttribute="leading" secondItem="hR6-ab-vtF" secondAttribute="leadingMargin" constant="-7" id="01l-vN-yAw"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="25b-dG-TwQ" secondAttribute="leading" id="0A1-TX-1x0"/>
+                            <constraint firstItem="25b-dG-TwQ" firstAttribute="top" secondItem="EqZ-vI-QPV" secondAttribute="bottom" constant="377" id="3g5-BU-nFc"/>
+                            <constraint firstItem="cl9-uj-pZY" firstAttribute="top" secondItem="EqZ-vI-QPV" secondAttribute="bottom" constant="77" id="4gi-Ud-2JU"/>
+                            <constraint firstItem="4CC-Ns-cBn" firstAttribute="top" secondItem="cl9-uj-pZY" secondAttribute="bottom" constant="438" id="CU8-yc-FIS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="URu-wi-k2t" secondAttribute="trailing" constant="-10" id="HLn-s2-RaH"/>
+                            <constraint firstItem="4CC-Ns-cBn" firstAttribute="top" secondItem="PkD-5e-gRH" secondAttribute="bottom" constant="129" id="Kd1-nJ-tKP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PkD-5e-gRH" secondAttribute="trailing" id="QUe-UV-eAS"/>
+                            <constraint firstItem="PkD-5e-gRH" firstAttribute="top" secondItem="EqZ-vI-QPV" secondAttribute="bottom" constant="377" id="RIB-r6-M6C"/>
+                            <constraint firstItem="URu-wi-k2t" firstAttribute="top" secondItem="EqZ-vI-QPV" secondAttribute="bottom" constant="120" id="YeV-iE-wQ5"/>
+                            <constraint firstItem="4CC-Ns-cBn" firstAttribute="top" secondItem="URu-wi-k2t" secondAttribute="bottom" constant="185" id="qfA-v7-6et"/>
+                            <constraint firstItem="4CC-Ns-cBn" firstAttribute="top" secondItem="25b-dG-TwQ" secondAttribute="bottom" constant="129" id="vZW-ma-3bL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cl9-uj-pZY" secondAttribute="trailing" constant="78" id="xhC-vw-55t"/>
+                            <constraint firstItem="cl9-uj-pZY" firstAttribute="leading" secondItem="hR6-ab-vtF" secondAttribute="leadingMargin" constant="80" id="yeI-qw-lzk"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="cl9-uj-pZY"/>
+                                <exclude reference="25b-dG-TwQ"/>
+                                <exclude reference="PkD-5e-gRH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4gi-Ud-2JU"/>
+                                <exclude reference="xhC-vw-55t"/>
+                                <exclude reference="yeI-qw-lzk"/>
+                                <exclude reference="01l-vN-yAw"/>
+                                <exclude reference="HLn-s2-RaH"/>
+                                <exclude reference="YeV-iE-wQ5"/>
+                                <exclude reference="0A1-TX-1x0"/>
+                                <exclude reference="3g5-BU-nFc"/>
+                                <exclude reference="QUe-UV-eAS"/>
+                                <exclude reference="RIB-r6-M6C"/>
+                                <exclude reference="CU8-yc-FIS"/>
+                                <exclude reference="Kd1-nJ-tKP"/>
+                                <exclude reference="qfA-v7-6et"/>
+                                <exclude reference="vZW-ma-3bL"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="cl9-uj-pZY"/>
+                                <include reference="25b-dG-TwQ"/>
+                                <include reference="PkD-5e-gRH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4gi-Ud-2JU"/>
+                                <include reference="xhC-vw-55t"/>
+                                <include reference="yeI-qw-lzk"/>
+                                <include reference="01l-vN-yAw"/>
+                                <include reference="HLn-s2-RaH"/>
+                                <include reference="YeV-iE-wQ5"/>
+                                <include reference="0A1-TX-1x0"/>
+                                <include reference="3g5-BU-nFc"/>
+                                <include reference="QUe-UV-eAS"/>
+                                <include reference="RIB-r6-M6C"/>
+                                <include reference="CU8-yc-FIS"/>
+                                <include reference="Kd1-nJ-tKP"/>
+                                <include reference="qfA-v7-6et"/>
+                                <include reference="vZW-ma-3bL"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="f1Q-zy-e7w">
+                        <barButtonItem key="leftBarButtonItem" title="back" id="jl0-RO-ivs">
+                            <connections>
+                                <segue destination="bbI-vy-Gbg" kind="modal" id="ksC-sZ-WZT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buttonPlayStop" destination="25b-dG-TwQ" id="8zv-8t-BqV"/>
+                        <outlet property="labelVideoTitle" destination="cl9-uj-pZY" id="41L-Gh-Ief"/>
+                        <outlet property="playerView" destination="URu-wi-k2t" id="SXF-m5-ZCC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2nU-wJ-T6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222" y="670"/>
         </scene>
         <!--Save Video Table View Controller-->
         <scene sceneID="51Q-FA-4kJ">
@@ -156,7 +277,7 @@
                     <navigationItem key="navigationItem" id="dqf-Wx-sWw">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="NWc-XR-TUr">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ud2-pS-x5g">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="534" y="7" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -210,7 +331,7 @@
                     <navigationItem key="navigationItem" id="dga-1d-te9">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="NI2-Aq-fFV">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="59S-IS-Oxi">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="20" y="7" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                             <connections>
@@ -221,10 +342,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-286.5" y="-753"/>
+            <point key="canvasLocation" x="-222" y="-887"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XWJ-Sz-FS3"/>
+        <segue reference="ksC-sZ-WZT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  AvPlayerIOSProject
 //
-//  Created by Cesar Gomez on 11/26/15.
+//  Created by Fabian Rosales on 11/26/15.
 //  Copyright © 2015 KeyBellSoftCR. All rights reserved.
 //
 
